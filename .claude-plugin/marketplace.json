@@ -1,0 +1,20 @@
+{
+  "name": "kapil-agent-skills",
+  "owner": {
+    "name": "Kapil Raghuwanshi",
+    "url": "https://github.com/kapilraghuwanshi"
+  },
+  "metadata": {
+    "description": "Public Agent Skills — turn ideas into actionable agent workflows (architecture, tooling, and more).",
+    "version": "1.0.1"
+  },
+  "plugins": [
+    {
+      "name": "kapil-agent-skills",
+      "description": "Skills from github.com/kapilraghuwanshi/skills. Currently includes Idea → Architecture: one-line product ideas → justified multi-layer architecture (frontend, backend, AI/agents, infra, security), NFR profile, decision log, diagram guidance, and cost ballpark. Install once for the whole bundle.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/idea-to-architecture"]
+    }
+  ]
+}
