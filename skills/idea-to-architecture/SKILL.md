@@ -86,8 +86,6 @@ Based on answers, infer and state the full NFR profile before generating archite
 
 Show this table to the user. Say: "Here's the NFR profile I'm working from — let me know if anything looks off."
 
----
-
 ## Phase 3 — Generate Architecture (6 Layers)
 
 Read the relevant reference files before generating each layer:
@@ -99,6 +97,78 @@ Read the relevant reference files before generating each layer:
 - Agent decisions → read `references/agent-layer.md`
 - Infra decisions → read `references/infra.md`
 - Security (cross-cutting) → read `references/security.md` early; apply to every layer, then summarise in Layer 6
+
+### Create `plan.md` in Phase 3 (Holistic Prototype Blueprint)
+
+In this phase, create or update a single end-to-end architecture artifact named `plan.md`.
+
+Rules:
+- Create `plan.md` in the project root.
+- If `plan.md` already exists, update it in place instead of duplicating sections.
+- This file must be holistic and wholesome: one complete blueprint that can drive prototype implementation.
+- You must synthesize guidance from all relevant reference files (`frontend.md`, `mobile.md` when needed, `backend.md`, `database.md`, `ai-layer.md`, `agent-layer.md`, `infra.md`, `security.md`, `diagram-guide.md`).
+- Keep recommendations opinionated and tied to NFRs.
+- Ensure the file is immediately actionable for prototype building (clear defaults, build order, milestones, risks).
+- Do not finalize or send the final architecture chat output until `plan.md` has been written or updated successfully.
+
+`plan.md` required structure:
+
+```markdown
+# End-to-End Prototype Architecture Plan — <idea name>
+
+## 1) Problem Statement and Product Goal
+- <what is being built and why now>
+
+## 2) Functional Requirements
+- <core use cases and entities>
+
+## 3) User Inputs and NFR Profile
+- Scale: <Q1>
+- Data pattern: <Q2>
+- Consistency: <Q3>
+- <inferred NFR bullets: latency, availability, resilience, security, observability>
+
+## 4) End-to-End Architecture (All Layers)
+### Layer 1 — Frontend / Mobile
+- <recommendation + why>
+### Layer 2 — Backend + Database
+- <recommendation + why>
+### Layer 3 — AI Layer
+- <recommendation + why, or explicit skip>
+### Layer 4 — Agent Layer
+- <recommendation + why, or explicit skip>
+### Layer 5 — Infrastructure
+- <recommendation + why>
+### Layer 6 — Security
+- <top risks + controls>
+
+## 5) Data and Integration Contracts
+- <key APIs/events/schemas and ownership>
+
+## 6) Decision Log (NFR-Linked)
+- <decision, chosen option, rejected option, NFR driver>
+
+## 7) Prototype Build Plan (Execution Roadmap)
+- Phase A: foundation
+- Phase B: core flows
+- Phase C: intelligence/agents
+- Phase D: hardening
+- <milestones, acceptance checks, and deliverables per phase>
+
+## 8) Validation and Testing Strategy
+- <unit, integration, e2e, load, failure drills>
+
+## 9) Diagram Plan (Excalidraw)
+- <system diagram scope + optional user flow/ERD diagrams to create>
+
+## 10) Cost Ballpark and Scaling Triggers
+- <small/medium/large monthly ranges + when to upgrade architecture>
+
+## 11) Open Questions and Assumptions
+- <explicit unknowns to resolve>
+```
+
+After writing `plan.md`, provide the full architecture response in chat.
 
 ## Recommendation Philosophy — Be Opinionated
 
