@@ -1,12 +1,15 @@
 {
   "name": "kapil-agent-skills",
-  "description": "Public Agent Skills from Kapil Raghuwanshi. Includes Idea → Architecture — multi-layer system design with NFR-driven decisions, decision log, diagram guidance, and rough monthly cost tiers.",
-  "version": "1.0.1",
+  "description": "Public Agent Skills from Kapil Raghuwanshi. Includes Idea → Architecture and CodePen Archiver workflows for architecture planning and local CodePen backups.",
+  "version": "1.1.0",
   "author": {
     "name": "Kapil Raghuwanshi",
     "url": "https://github.com/kapilraghuwanshi"
   },
   "repository": "https://github.com/kapilraghuwanshi/skills",
   "license": "MIT",
-  "skills": ["./skills/idea-to-architecture"]
+  "skills": [
+    "./skills/idea-to-architecture",
+    "./skills/codepen-archiver"
+  ]
 }

@@ -7,6 +7,7 @@ Public, versioned **Agent Skills** you can browse, clone, zip, and load into Cla
 | Skill | Folder | What it does |
 |--------|--------|----------------|
 | **Idea → Architecture** | [`skills/idea-to-architecture/`](./skills/idea-to-architecture/) | Turns a one-line product idea into a justified multi-layer architecture (frontend → backend → AI/agents → infra → security), NFR profile, decision log, Excalidraw-style diagram guidance, and cost ballpark. |
+| **CodePen Archiver** | [`skills/codepen-archiver/`](./skills/codepen-archiver/) | Archives CodePen pens and collections into a local folder with resumable syncs, manifest tracking, and organized categories for prototype reuse. |
 
 *Add new rows here whenever you add a skill.*
 
@@ -54,13 +55,15 @@ In Claude Code, add this repository as a marketplace (same pattern as [anthropic
 
 Then install the bundle from the marketplace UI, or use the install flow your Claude Code version documents for this marketplace name: **`kapil-agent-skills`**.
 
-After installation, mention the skill in chat (e.g. “use idea-to-architecture”) or rely on the skill description for matching.
+After installation, mention the skill in chat (e.g. “use idea-to-architecture” or “use codepen-archiver”) or rely on the skill description for matching.
 
 ### Claude.ai (upload folder or zip)
 
-1. Use the folder `skills/idea-to-architecture/` **as the skill root** (that folder must contain `SKILL.md`).
+1. Use a skill folder like `skills/idea-to-architecture/` or `skills/codepen-archiver/` **as the skill root** (that folder must contain `SKILL.md`).
 2. Or create a zip of **that folder’s contents** (not the whole monorepo):  
    `./scripts/package-skill.sh idea-to-architecture`  
+   or  
+   `./scripts/package-skill.sh codepen-archiver`  
    Then upload the zip if your Claude plan supports skill upload.
 
 ### Cursor
@@ -69,7 +72,11 @@ Copy or symlink a skill directory into your user or project skills path, for exa
 
 - `~/.cursor/skills/idea-to-architecture/`  
   or  
+- `~/.cursor/skills/codepen-archiver/`  
+  or  
 - `<project>/.cursor/skills/idea-to-architecture/`
+  or
+- `<project>/.cursor/skills/codepen-archiver/`
 
 Each skill directory should contain `SKILL.md` at its root.
 

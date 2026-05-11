@@ -1,0 +1,14 @@
+{
+  "name": "codepen-archiver-skill",
+  "version": "1.0.0",
+  "description": "CodePen archiver skill: scrape profile and archive pens",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/scrape-profile.mjs",
+    "archive": "node scripts/codepen-archive.mjs",
+    "run-full": "node scripts/run-full-archive.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
